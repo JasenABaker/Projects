@@ -8,3 +8,6 @@ A game resembling Jeopardy. Users will be able to select a square with a point v
 
 ### Trello Board
 [Jasen's Trello Board](https://trello.com/b/aNCKBiPU/project-one)
+
+### WireFrame
+![Jasen's wireframe](https://github.com/JasenABaker/Projects/blob/master/Jeopardy%20wireframe.png)
