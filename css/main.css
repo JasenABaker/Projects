@@ -38,10 +38,17 @@ header h1 {
     grid-template-columns: repeat(5, 20%);
     align-items: center;
     justify-items: center;
+    
 
 }
 
 .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00CECB;
+    font-family: 'Spectral SC', serif;
+    font-weight: bold;
     height: 70%;
     width: 80%;
     background-color: #FFED66;
@@ -73,4 +80,25 @@ header h1 {
     color:#FFED66;
     background-color: #FF5E5B;
     border: 4px solid #FFED66;
+}
+
+#Pscore1, #Pscore2{
+    font-family: 'Spectral SC', serif;
+    font-size: 18px;
+    background-color: #D8D8D8;  
+    border-radius: 5px;
+    border: 3px solid #FF5E5B;
+    box-shadow: 10px 5px 5px rgba(0,0,0,.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Pscore1{
+    grid-area: 19/ 5 / 21 / 8;
+}
+
+#Pscore2{
+      grid-area: 19/ 14 / 21 / 17;
+ 
 }
