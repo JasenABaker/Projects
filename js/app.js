@@ -56,6 +56,7 @@ $(document).ready(function () {
         catHolder: 0,
         pointhHolder: 0,
         score: 0,
+        count: 25,
         // get answer for category and point value
         answer: (category, pointValue) => {
 
@@ -111,7 +112,7 @@ $(document).ready(function () {
                alert('You are correct!')
                game.score += (point + 1) * 100
            } else {
-               alert(`You are wrong! We were looking for '${correct}'. `)
+               alert(`Sorry, that is wrong answer. We were looking for '${correct}'. `)
                game.score -= (point + 1) * 100
            }
            $('#score1span').html(game.score)
@@ -119,8 +120,10 @@ $(document).ready(function () {
            // console.log(questionSelected)
             console.log(correct)
             console.log(game.score)
-        },
-    }
+
+        }
+        
+}
 
 
 
@@ -142,6 +145,7 @@ $(document).ready(function () {
 
     $('.answers').on('click', function () {
         openModal()
+        const answerBox = $(this)
         let cat = ($(this).data('cat') - 1)
         //  console.log(cat)
         let point = ($(this).data('point') - 1)
@@ -149,6 +153,13 @@ $(document).ready(function () {
         game.answer(cat, point)
         game.correctQuestion(cat, point)
         game.questionRandomizer(cat, point)
+        $(this).css('background-color','#FF5E5B')
+        $(this).off()
+        
+        
+
+       
+    
 
     })
 
@@ -156,7 +167,11 @@ $(document).ready(function () {
         let span = $(this).data('span')
        // console.log(span)
         game.compareQuestion(game.catHolder, game.pointHolder, span)
-        
         closeModal()
+        game.count--
+        console.log(game.count)
+        
     })
+    
+
 })

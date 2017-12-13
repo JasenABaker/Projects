@@ -12,3 +12,10 @@ A game resembling Jeopardy. Users will be able to select a square with a point v
 ### WireFrame
 ![Jasen's wireframe](https://github.com/JasenABaker/Projects/blob/master/Jeopardy%20wireframe.png)
 ![More wireframe](https://github.com/JasenABaker/Projects/blob/master/answer%20wireframe.png)
+
+
+
+### Tech used
+    * jQuery
+    * A modal tutorial found here ![modal tute](https://www.youtube.com/watch?v=6ophW7Ask_0)
+    * A array shuffling function found here ![shuffle Array](https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array)
