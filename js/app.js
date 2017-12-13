@@ -55,6 +55,7 @@ $(document).ready(function () {
     const game = {
         catHolder: 0,
         pointhHolder: 0,
+        score: 0,
         // get answer for category and point value
         answer: (category, pointValue) => {
 
@@ -105,14 +106,19 @@ $(document).ready(function () {
            const questionSelected = $(`[data-span="${spanClicked}"]`).text()
            const correct = game.correctQuestion(cat, point)
             
+            
            if (questionSelected === correct){
-               console.log('You are correct!')
+               alert('You are correct!')
+               game.score += (point + 1) * 100
            } else {
-               console.log('You are wrong!')
+               alert(`You are wrong! We were looking for '${correct}'. `)
+               game.score -= (point + 1) * 100
            }
+           $('#score1span').html(game.score)
 
            // console.log(questionSelected)
             console.log(correct)
+            console.log(game.score)
         },
     }
 
@@ -150,6 +156,7 @@ $(document).ready(function () {
         let span = $(this).data('span')
        // console.log(span)
         game.compareQuestion(game.catHolder, game.pointHolder, span)
+        
         closeModal()
     })
 })
