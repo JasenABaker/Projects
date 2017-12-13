@@ -46,7 +46,9 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
     color: #00CECB;
+    font-size: 18px;
     font-family: 'Spectral SC', serif;
     font-weight: bold;
     height: 70%;
@@ -56,10 +58,7 @@ header h1 {
     border: 2px solid #00CECb;
 
 }
-.column{
-    display: grid;
-    grid-template-rows: repeat(5, 20%)
-}
+
 
 .answers {
     font-size: 24px;
@@ -76,10 +75,11 @@ header h1 {
 }
 
 .answers:hover {
-    font-size: 30px;
+    
     color:#FFED66;
     background-color: #FF5E5B;
     border: 2px solid #FFED66;
+    cursor: pointer;
 }
 
 #Pscore1, #Pscore2{
@@ -104,7 +104,7 @@ header h1 {
 }
 
 .modal{
-    /*display:none;*/
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -130,7 +130,7 @@ header h1 {
     align-items: center;
 }
 .answerCard{
-    font-size: 24px;
+    font-size: 18px;
     font-family: 'Open Sans', sans-serif;
     height: 30%;
     width: 95%;
@@ -152,4 +152,10 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.questionChoice:hover{
+    border: 3px solid #FFED66;
+    cursor: pointer;
+    color: #FF5E5B;
 }
