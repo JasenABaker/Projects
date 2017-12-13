@@ -32,15 +32,25 @@ $(document).ready(function () {
         'He is the drummer',
         "He is the newest memeber of the band and he's also pretty good at bass",
         'An original member, he was replaced after robbing a CVS']
-    const catTwoAnswer = 
+    
+        const catTwoAnswer = 
     ['Also known as the Beast, this character shares a name with the band', 
         'Also known as the Knowledge, this character matches the pair', 
         'The main protagonist of the story, this characters and the lead singer share a name', 
         'This character leads the K.B.I and also goes by the Inferno', 
         'This character was dismembered but later rebuilt']
-    const catThreeAnswer = []
+    
+        const catThreeAnswer = 
+    ['This is the latest album',
+    'The third album, this peaked at number 7 on Billboard’s top 200',
+    'This album was a prequel to the first four albums conceptional, but came as the fifth',
+    'This album came second in a double album',
+    'Release in 2002, this was the debut studio album']
+    
     const catFourAnswer = []
+    
     const catFiveAnswer = []
+    
     //aray of  correct questions
     const catOneQuestion = 
     ['Who is Claudio Sanchez?', 
@@ -48,14 +58,23 @@ $(document).ready(function () {
         'Who is Josh Eppard', 
         'Who is Zack Cooper', 
         'Who is Michael Todd']
-    const catTwoQuestion = 
+    
+        const catTwoQuestion = 
     ['Who is Coheed Kilgannon',
         'Who is Cambria Kilgannon',
         'Who is Claudio Kilgannon',
         'Who is Jesse Kilgannon',
         'Who is Sizer']
-    const catThreeQuestion = []
+    
+        const catThreeQuestion = 
+    ['What is Color Before the Sun',
+    "What is Good Apollo, I'm Burning Star IV, Volume One",
+    'What is The Year of the Black Rainbow',
+    'What is The Afterman: Descension',
+    'What is The Second Stage Turbine Blade']
+    
     const catFourQuestion = []
+    
     const catFiveQuestion = []
     ///fake answer array
     const catOneFake = 
@@ -63,13 +82,30 @@ $(document).ready(function () {
         'Who is Nick Coppala', 'Who is Ben Weinman', 'Who is Greg Puciato', 'Who is Liam Wilson',
         'Who is John Dolmayan', 'Who is Daron Malakian', 'Who is Andy Khachaturian', 
         'Who is Juan Alderete', 'Who is Cedric Bixler-Zavala', 'Who is Deantoni Parks']
+    
     const catTwoFake = 
     ['Who is Mayo Deftinwolf','Who is Wilhelm Ryan','Who is Al the Killer',
     'Who is Mariah Antillarea','Who is Leonard Hohenberger','Who is Newo Ikkin',
     'Who is Josephine Kilgannon','Who is Patrick McCormick',
     'Who is Star Cecil','Who is Litan Boss','Who is Pearl Hohenberger','Who is Hanton Jo Seph','Who is Malvas Limbi']
-    const catThreeFake = []
+    
+    const catThreeFake = 
+    ['What is In Keeping Secrets of Silent Earth: 3',
+    "What is Good Apollo, I'm Burning Star IV, Volume Two",
+    'What is The Afterman: Descension',
+    'What is Neverender 12',
+    'What is Plan to Take Over The World',
+    'What is The Penelope',
+    'What is Delirium Trigger',
+    'What is Kezia',
+    'What is Fortress',
+    'What is Scurrilous',
+    'What is Volition',
+    'What is De-Loused in the Comatorium',
+    'What is The Bedlam in Goliath']
+    
     const catFourFake = []
+    
     const catFiveFake = []
     ///arrays for the answer and question
     const answers = [catOneAnswer, catTwoAnswer, catThreeAnswer, catFourAnswer, catFiveAnswer]
@@ -141,7 +177,7 @@ $(document).ready(function () {
 ///Ending the game and eventual final jeopardy starter
         gameEnd: () => {
         if ((game.count <= 0) && (game.score >= 0)) {
-            alert(`Great Job! You're score is ${game.score}! You win`)
+            alert(`Great Job! You're score is ${game.score}! You win!`)
         } else if (game.count <= 0){
             alert(`Game over! Your score is ${game.score}. How pathetic. Hang your head in shame.`)
         }
