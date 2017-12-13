@@ -51,7 +51,7 @@ $(document).ready(function () {
     const correctQuestions = [catOneQuestion, catTwoQuestion, catThreeQuestion, catFourQuestion, catFiveQuestion]
     const fakeAnswerArray = [catOneFake, catTwoFake, catThreeFake, catFourFake, catFiveFake]
 
-
+//game functionobjecy
     const game = {
         catHolder: 0,
         pointhHolder: 0,
@@ -68,8 +68,8 @@ $(document).ready(function () {
            $(".answerCard").html(selectCatPoint)
            game.catHolder = category
            game.pointHolder = pointValue
-          // console.log(game.catHolder)
-          //console.log(game.pointHolder)
+           // console.log(game.catHolder)
+           //console.log(game.pointHolder)
         },
         //get the correct question
         correctQuestion: (category, pointValue) => {
@@ -102,7 +102,7 @@ $(document).ready(function () {
             $("#qc4").html(shuffleQuestion[3])
 
         },
-
+/// compare if the answer selected is the same as the correct answer
         compareQuestion: (cat, point, spanClicked) => {
            const questionSelected = $(`[data-span="${spanClicked}"]`).text()
            const correct = game.correctQuestion(cat, point)
@@ -121,7 +121,15 @@ $(document).ready(function () {
             console.log(correct)
             console.log(game.score)
 
+        },
+    
+        gameEnd: () => {
+        if ((game.count <= 0) && (game.score >= 0)) {
+            alert(`Great Job! You're score is ${game.score}! You win`)
+        } else if (game.count <= 0){
+            alert(`Game over! Your score is ${game.score}. How pathetic. Hang your head in shame.`)
         }
+    }
         
 }
 
@@ -170,7 +178,7 @@ $(document).ready(function () {
         closeModal()
         game.count--
         console.log(game.count)
-        
+        game.gameEnd()
     })
     
 
