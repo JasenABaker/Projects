@@ -1,15 +1,10 @@
-
+///get document ready!
 $(document).ready(function () {
-    ///need a function that figures out the answer
-    /// a function that figures out the correct question
-    //a function that figures out fake questions
+
 
 
     // get modal element
     const modal = $('#modal1')
-
-    //get question span selection
-    const questSpan = $('.questionChoice')
 
     //function for open modal
     const openModal = () => {
@@ -21,28 +16,58 @@ $(document).ready(function () {
         modal.css('display', 'none')
     }
 
+    //get question span selection
+    const questSpan = $('.questionChoice')
+    $('#cat1').html('Band Members')
+    $('#cat2').html('Concept Characters')
+    $('#cat3').html('All About the Albums')
+    $('#cat4').html('Storyline')
+    $('#cat5').html('Songs')
 
 
     //arrays of answers
-    const catOneAnswer = ['He is the lead singer',
+    const catOneAnswer = 
+    ['He is the lead singer',
         'He is the lead guitarist',
         'He is the drummer',
         "He is the newest memeber of the band and he's also pretty good at bass",
         'An original member, he was replaced after robbing a CVS']
-    const catTwoAnswer = []
+    const catTwoAnswer = 
+    ['Also known as the Beast, this character shares a name with the band', 
+        'Also known as the Knowledge, this character matches the pair', 
+        'The main protagonist of the story, this characters and the lead singer share a name', 
+        'This character leads the K.B.I and also goes by the Inferno', 
+        'This character was dismembered but later rebuilt']
     const catThreeAnswer = []
     const catFourAnswer = []
     const catFiveAnswer = []
     //aray of  correct questions
-    const catOneQuestion = ['Who is Claudio Sanchez?', 'Who is Travis Stever', 'Who is Josh Eppard', 'Who is Zack Cooper', 'Who is Michael Todd']
-    const catTwoQuestion = []
+    const catOneQuestion = 
+    ['Who is Claudio Sanchez?', 
+        'Who is Travis Stever', 
+        'Who is Josh Eppard', 
+        'Who is Zack Cooper', 
+        'Who is Michael Todd']
+    const catTwoQuestion = 
+    ['Who is Coheed Kilgannon',
+        'Who is Cambria Kilgannon',
+        'Who is Claudio Kilgannon',
+        'Who is Jesse Kilgannon',
+        'Who is Sizer']
     const catThreeQuestion = []
     const catFourQuestion = []
     const catFiveQuestion = []
     ///fake answer array
-    const catOneFake = ['Who is Bob Hoskins', 'Who is Phill Murray', 'Who is Gabriel Hawkins', 'Who is Nick Coppala', 'Who is Ben Weinman', 'Who is Greg Puciato', 'Who is Liam Wilson',
-        'Who is John Dolmayan', 'Who is Daron Malakian', 'Who is Andy Khachaturian', 'Who is Juan Alderete', 'Who is Cedric Bixler-Zavala', 'Who is Deantoni Parks']
-    const catTwoFake = []
+    const catOneFake = 
+    ['Who is Bob Hoskins', 'Who is Phill Murray', 'Who is Gabriel Hawkins', 
+        'Who is Nick Coppala', 'Who is Ben Weinman', 'Who is Greg Puciato', 'Who is Liam Wilson',
+        'Who is John Dolmayan', 'Who is Daron Malakian', 'Who is Andy Khachaturian', 
+        'Who is Juan Alderete', 'Who is Cedric Bixler-Zavala', 'Who is Deantoni Parks']
+    const catTwoFake = 
+    ['Who is Mayo Deftinwolf','Who is Wilhelm Ryan','Who is Al the Killer',
+    'Who is Mariah Antillarea','Who is Leonard Hohenberger','Who is Newo Ikkin',
+    'Who is Josephine Kilgannon','Who is Patrick McCormick',
+    'Who is Star Cecil','Who is Litan Boss','Who is Pearl Hohenberger','Who is Hanton Jo Seph','Who is Malvas Limbi']
     const catThreeFake = []
     const catFourFake = []
     const catFiveFake = []
@@ -60,16 +85,12 @@ $(document).ready(function () {
         // get answer for category and point value
         answer: (category, pointValue) => {
 
-            let selectAnswerCat = answers[category]
-            let selectCatPoint = selectAnswerCat[pointValue];
-            // console.log(category)
-            // console.log(pointValue)
-            
-           $(".answerCard").html(selectCatPoint)
-           game.catHolder = category
-           game.pointHolder = pointValue
-           // console.log(game.catHolder)
-           //console.log(game.pointHolder)
+        let selectAnswerCat = answers[category]
+        let selectCatPoint = selectAnswerCat[pointValue];
+        $(".answerCard").html(selectCatPoint)
+        game.catHolder = category
+        game.pointHolder = pointValue
+    
         },
         //get the correct question
         correctQuestion: (category, pointValue) => {
@@ -104,25 +125,20 @@ $(document).ready(function () {
         },
 /// compare if the answer selected is the same as the correct answer
         compareQuestion: (cat, point, spanClicked) => {
-           const questionSelected = $(`[data-span="${spanClicked}"]`).text()
-           const correct = game.correctQuestion(cat, point)
+        const questionSelected = $(`[data-span="${spanClicked}"]`).text()
+        const correct = game.correctQuestion(cat, point)
             
             
-           if (questionSelected === correct){
-               alert('You are correct!')
+        if (questionSelected === correct){
+            alert('You are correct!')
                game.score += (point + 1) * 100
-           } else {
-               alert(`Sorry, that is wrong answer. We were looking for '${correct}'. `)
+        } else {
+            alert(`Sorry, that is wrong answer. We were looking for '${correct}'. `)
                game.score -= (point + 1) * 100
-           }
-           $('#score1span').html(game.score)
-
-           // console.log(questionSelected)
-            console.log(correct)
-            console.log(game.score)
-
+        }
+        $('#score1span').html(game.score)
         },
-    
+///Ending the game and eventual final jeopardy starter
         gameEnd: () => {
         if ((game.count <= 0) && (game.score >= 0)) {
             alert(`Great Job! You're score is ${game.score}! You win`)
@@ -136,50 +152,28 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-
-    $('#cat1').html('Band Members')
-    $('#cat2').html('Concept Characters')
-    $('#cat3').html('All About the Albums')
-    $('#cat4').html('Storyline')
-    $('#cat5').html('Songs')
-
-
-
-    $('.answers').on('click', function () {
+///click on point button
+$('.answers').on('click', function () {
         openModal()
         const answerBox = $(this)
         let cat = ($(this).data('cat') - 1)
-        //  console.log(cat)
+        
         let point = ($(this).data('point') - 1)
-        // console.log(point)
+        
         game.answer(cat, point)
         game.correctQuestion(cat, point)
         game.questionRandomizer(cat, point)
+        ///turn off div selection and change color
         $(this).css('background-color','#FF5E5B')
         $(this).off()
-        
-        
+})
 
-       
-    
-
-    })
-
-    questSpan.on('click', function () {
+questSpan.on('click', function () {
         let span = $(this).data('span')
-       // console.log(span)
+
         game.compareQuestion(game.catHolder, game.pointHolder, span)
         closeModal()
         game.count--
-        console.log(game.count)
         game.gameEnd()
     })
-    
-
 })
