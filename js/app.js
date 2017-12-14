@@ -1,6 +1,6 @@
 ///get document ready!
 $(document).ready(function () {
- 
+
 
 
     // get modal element
@@ -61,12 +61,12 @@ $(document).ready(function () {
             'The seven stars around the Fence are called this',
             'This is the beam of light connecting all of Heaven’s fence']
 
-    const catFiveAnswer = 
-    ['A popular crowd pleaser, this song is noted for its beginning guitar riff',
-        'This song is about a house',
-        'This song was written to be featured in a Transformers movie',
-        'This song won best video at at the Kerrang! Awards',
-        'This song is my personal favorite']
+    const catFiveAnswer =
+        ['A popular crowd pleaser, this song is noted for its beginning guitar riff',
+            'This song is about a house',
+            'This song was written to be featured in a Transformers movie',
+            'This song won best video at at the Kerrang! Awards',
+            'This song is my personal favorite']
 
     //aray of  correct questions
     const catOneQuestion =
@@ -97,13 +97,13 @@ $(document).ready(function () {
             'What are the Stars of Sirius',
             'What is the Keywork']
 
-    const catFiveQuestion = 
-    ['What is Welcome Home',
-        'What is Young Love',
-        'What is The Running Free',
-        'What is Feathers',
-        'What are all of them']
-    
+    const catFiveQuestion =
+        ['What is Welcome Home',
+            'What is Young Love',
+            'What is The Running Free',
+            'What is Feathers',
+            'What are all of them']
+
     ///fake answer array
     const catOneFake =
         ['Who is Bob Hoskins', 'Who is Phill Murray', 'Who is Gabriel Hawkins',
@@ -132,17 +132,17 @@ $(document).ready(function () {
             'What is De-Loused in the Comatorium',
             'What is The Bedlam in Goliath']
 
-    const catFourFake = 
-    ['What are Goosebumps','What are Dragons','What are Death Eaters',
-        'What are The Forsaken','What is The Night’s Watch','What is Hogwarts',
-        'What is Slytherin','What is the One Power','What is Magic',
-        'What is the Sword of Truth','What is Malum Unus','What is Bob Saget','What are Hobbits']
+    const catFourFake =
+        ['What are Goosebumps', 'What are Dragons', 'What are Death Eaters',
+            'What are The Forsaken', 'What is The Night’s Watch', 'What is Hogwarts',
+            'What is Slytherin', 'What is the One Power', 'What is Magic',
+            'What is the Sword of Truth', 'What is Malum Unus', 'What is Bob Saget', 'What are Hobbits']
 
-    const catFiveFake = 
-    ['What is Devil In Jersey City','What is Everything Evil','What is Delirium Trigger',
-        'What is Hearshot Kid Disaster','What is The Camper Velourium II: Backend Of Forever','What is The Camper Velourium III: Al The Killer',
-        'What is A Favor House Atlantic','What is The Light & The Glass','What is 2113',
-        'What is Crossing The Frame','What is Apollo I: The Writing Writer','What is Once Upon Your Dead Body','What is Wake Up']
+    const catFiveFake =
+        ['What is Devil In Jersey City', 'What is Everything Evil', 'What is Delirium Trigger',
+            'What is Hearshot Kid Disaster', 'What is The Camper Velourium II: Backend Of Forever', 'What is The Camper Velourium III: Al The Killer',
+            'What is A Favor House Atlantic', 'What is The Light & The Glass', 'What is 2113',
+            'What is Crossing The Frame', 'What is Apollo I: The Writing Writer', 'What is Once Upon Your Dead Body', 'What is Wake Up']
 
     ///arrays for the answer and question
     const answers = [catOneAnswer, catTwoAnswer, catThreeAnswer, catFourAnswer, catFiveAnswer]
@@ -214,48 +214,50 @@ $(document).ready(function () {
             }
             $('#score1span').html(game.score)
         },
-/// apend the final Question
-        appendFinalQuestion: () =>{
+        /// apend the final Question
+        appendFinalQuestion: () => {
             $('#finalQuestion').html(`<h2>What was the name of the band before it was Coheed and Cambria?</h2><input id="jepFinAnswer" type="text">
             <button id="finalbtn">Final Answer</button></div>`)
         },
 
-/// collect the wager and see if it is a number
-        wagerSubmit: $(':submit').on('click', function() {
-                const num = parseInt($(':input').val())
-            if (num <= game.score){
+        /// collect the wager and see if it is a number
+        wagerSubmit: $(':submit').on('click', function () {
+            const num = parseInt($(':input').val())
+            if (num <= game.score) {
                 game.wager = num
                 game.appendFinalQuestion()
-            } else if (num > game.score){
+            } else if (num > game.score) {
                 alert(`Your score is ${game.score}. Your wager must be less than or equal to that!`)
-            } 
-                
+            }
+
         }),
         /// final jeopardy function
-        finalJeopardy:() =>{
+        finalJeopardy: () => {
             $('#inputH2').html(`Your score is ${game.score}. Wager your points!`)
-            
-    
-        },
-    
-            
 
-        
+
+        },
+
+
+
+
         ///Ending the game and eventual final jeopardy starter
         gameEnd: () => {
             if ((game.count <= 0) && (game.score >= 0)) {
                 alert(`Great Job! You're score is ${game.score}! Time for final Jeopardy!`)
                 openFinal()
                 game.finalJeopardy()
-                
+
             } else if (game.count <= 0) {
                 alert(`Game over! Your score is ${game.score}. How pathetic. Hang your head in shame.`)
                 location.reload()
-            }  
+            }
         },
-    finalAnswerClick: $('#finalQuestion').on('click', '#finalbtn', function(){
+
+        /// checking to see if the final answer is correct and reloading game
+        finalAnswerClick: $('#finalQuestion').on('click', '#finalbtn', function () {
             const fAnswer = $('#jepFinAnswer').val()
-            if((fAnswer === game.finalAnswer1) || (fAnswer === game.finalAnswer2)){
+            if ((fAnswer === game.finalAnswer1) || (fAnswer === game.finalAnswer2)) {
                 game.score += game.wager
                 alert(`Congratulations you are our champion with a grand total of ${game.score}! Thank you for playing!`)
                 location.reload()
@@ -264,10 +266,10 @@ $(document).ready(function () {
                 alert(`Sorry the answer we were looking for is ${game.finalAnswer1}. You score is now ${game.score}. Thank you for playing`)
                 location.reload()
             }
-            
-        
-    })
-}
+
+
+        })
+    }
 
 
 
@@ -285,20 +287,17 @@ $(document).ready(function () {
         openModal()
         const answerBox = $(this)
         let cat = ($(this).data('cat') - 1)
-
         let point = ($(this).data('point') - 1)
-
         game.answer(cat, point)
         game.correctQuestion(cat, point)
         game.questionRandomizer(cat, point)
-        ///turn off div selection and change color
+    ///turn off div selection and change color
         $(this).css('background-color', '#FF5E5B')
         $(this).off()
     })
-
+///click on answer button
     questSpan.on('click', function () {
         let span = $(this).data('span')
-
         game.compareQuestion(game.catHolder, game.pointHolder, span)
         closeModal()
         game.count--
