@@ -154,8 +154,10 @@ $(document).ready(function () {
         catHolder: 0,
         pointhHolder: 0,
         score: 0,
-        count: 5,
+        count: 25,
         wager: 0,
+        finalAnswer1: "It's Shabutie",
+        finalAnswer2: "Shabutie",
         // get answer for category and point value
         answer: (category, pointValue) => {
 
@@ -212,13 +214,18 @@ $(document).ready(function () {
             }
             $('#score1span').html(game.score)
         },
+/// apend the final Question
+        appendFinalQuestion: () =>{
+            $('#finalQuestion').html(`<h2>What was the name of the band before it was Coheed and Cambria?</h2><input id="jepFinAnswer" type="text">
+            <button id="finalbtn">Final Answer</button></div>`)
+        },
 
 /// collect the wager and see if it is a number
         wagerSubmit: $(':submit').on('click', function() {
                 const num = parseInt($(':input').val())
             if (num <= game.score){
                 game.wager = num
-                console.log(game.wager)
+                game.appendFinalQuestion()
             } else if (num > game.score){
                 alert(`Your score is ${game.score}. Your wager must be less than or equal to that!`)
             } 
@@ -246,8 +253,25 @@ $(document).ready(function () {
                 location.reload()
             }  
         },
-    
+    finalAnswerClick: $('#finalQuestion').on('click', '#finalbtn', function(){
+            const fAnswer = $('#jepFinAnswer').val()
+            if((fAnswer === game.finalAnswer1) || (fAnswer === game.finalAnswer2)){
+                game.score += game.wager
+                alert(`Congratulations you are our champion with a grand total of ${game.score}! Thank you for playing!`)
+                location.reload()
+            } else {
+                game.score -= game.wager
+                alert(`Sorry the answer we were looking for is ${game.finalAnswer1}. You score is now ${game.score}. Thank you for playing`)
+                location.reload()
+            }
+            
+        
+    })
 }
+
+
+
+
 
 
 
