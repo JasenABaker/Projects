@@ -54,7 +54,12 @@ $(document).ready(function () {
             'The seven stars around the Fence are called this',
             'This is the beam of light connecting all of Heaven’s fence']
 
-    const catFiveAnswer = []
+    const catFiveAnswer = 
+    ['A popular crowd pleaser, this song is noted for its beginning guitar riff',
+        'This song is about a house',
+        'This song was written to be featured in a Transformers movie',
+        'This song won best video at at the Kerrang! Awards',
+        'This song is my personal favorite']
 
     //aray of  correct questions
     const catOneQuestion =
@@ -85,7 +90,13 @@ $(document).ready(function () {
             'What are the Stars of Sirius',
             'What is the Keywork']
 
-    const catFiveQuestion = []
+    const catFiveQuestion = 
+    ['What is Welcome Home',
+        'What is Young Love',
+        'What is The Running Free',
+        'What is Feathers',
+        'What are all of them']
+    
     ///fake answer array
     const catOneFake =
         ['Who is Bob Hoskins', 'Who is Phill Murray', 'Who is Gabriel Hawkins',
@@ -102,7 +113,7 @@ $(document).ready(function () {
     const catThreeFake =
         ['What is In Keeping Secrets of Silent Earth: 3',
             "What is Good Apollo, I'm Burning Star IV, Volume Two",
-            'What is The Afterman: Descension',
+            'What is The Afterman: Ascension',
             'What is Neverender 12',
             'What is Plan to Take Over The World',
             'What is The Penelope',
@@ -120,7 +131,12 @@ $(document).ready(function () {
         'What is Slytherin','What is the One Power','What is Magic',
         'What is the Sword of Truth','What is Malum Unus','What is Bob Saget','What are Hobbits']
 
-    const catFiveFake = []
+    const catFiveFake = 
+    ['What is Devil In Jersey City','What is Everything Evil','What is Delirium Trigger',
+        'What is Hearshot Kid Disaster','What is The Camper Velourium II: Backend Of Forever','What is The Camper Velourium III: Al The Killer',
+        'What is A Favor House Atlantic','What is The Light & The Glass','What is 2113',
+        'What is Crossing The Frame','What is Apollo I: The Writing Writer','What is Once Upon Your Dead Body','What is Wake Up']
+
     ///arrays for the answer and question
     const answers = [catOneAnswer, catTwoAnswer, catThreeAnswer, catFourAnswer, catFiveAnswer]
     const correctQuestions = [catOneQuestion, catTwoQuestion, catThreeQuestion, catFourQuestion, catFiveQuestion]
