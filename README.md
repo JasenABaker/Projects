@@ -16,11 +16,12 @@ A game resembling Jeopardy. Users will be able to select a square with a point v
 
 
 ### Tech used
-*jQuery
-*A modal tutorial found here 
+jQuery
+A modal tutorial found here 
 [modal tute](https://www.youtube.com/watch?v=6ophW7Ask_0)
-*A array shuffling function found here 
+A array shuffling function found here 
 [shuffle Array](https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array)
+Css Grid
 
 ### Version 2.0 goals
     Add two players
