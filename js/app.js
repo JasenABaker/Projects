@@ -194,7 +194,7 @@ $(document).ready(function () {
 
             newFakeArray.push(addRealQuestion)
             const shuffleQuestion = game.shuffle(newFakeArray)
-            // console.log(shuffleQuestion)
+            // appending the questions to the DOm
             $("#qc1").html(shuffleQuestion[0])
             $("#qc2").html(shuffleQuestion[1])
             $("#qc3").html(shuffleQuestion[2])
@@ -206,14 +206,14 @@ $(document).ready(function () {
             const questionSelected = $(`[data-span="${spanClicked}"]`).text()
             const correct = game.correctQuestion(cat, point)
 
-
-            if (questionSelected === correct) {
+                if (questionSelected === correct) {
                 alert('You are correct!')
                 game.score += (point + 1) * 100
             } else {
                 alert(`Sorry, that is wrong answer. We were looking for '${correct}'. `)
                 game.score -= (point + 1) * 100
             }
+            //appending the score to the DOM
             $('#score1span').html(game.score)
         },
         /// apend the final Question
@@ -233,17 +233,15 @@ $(document).ready(function () {
             }
 
         }),
-        /// final jeopardy function
+        /// final jeopardy start function
         finalJeopardy: () => {
             $('#inputH2').html(`Your score is ${game.score}. Wager your points!`)
-
-
-        },
+    },
 
 
 
 
-        ///Ending the game and eventual final jeopardy starter
+        ///Ending the game and starting final jeopardy 
         gameEnd: () => {
             if ((game.count <= 0) && (game.score >= 0)) {
                 alert(`Great Job! You're score is ${game.score}! Time for final Jeopardy!`)
