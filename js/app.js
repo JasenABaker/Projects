@@ -5,15 +5,22 @@ $(document).ready(function () {
 
     // get modal element
     const modal = $('#modal1')
+    const finalModal = $('#modal2')
 
     //function for open modal
     const openModal = () => {
         modal.css('display', 'block')
     }
+    const openFinal = () => {
+        finalModal.css('display', 'block')
+    }
 
     //function to close modal
     const closeModal = () => {
         modal.css('display', 'none')
+    }
+    const closeFinal = () => {
+        finalModal.css('display', 'none')
     }
 
     //get question span selection
@@ -204,18 +211,27 @@ $(document).ready(function () {
             }
             $('#score1span').html(game.score)
         },
+        finalJeopardy:() =>{
+            
+
+        },
         ///Ending the game and eventual final jeopardy starter
         gameEnd: () => {
             if ((game.count <= 0) && (game.score >= 0)) {
-                alert(`Great Job! You're score is ${game.score}! You win!`)
-                location.reload()
+                alert(`Great Job! You're score is ${game.score}! Time for final Jeopardy!`)
+                openFinal()
+                
             } else if (game.count <= 0) {
                 alert(`Game over! Your score is ${game.score}. How pathetic. Hang your head in shame.`)
                 location.reload()
             }  
-        }
+        },
+    
+}
 
-    }
+
+
+
 
 
 
