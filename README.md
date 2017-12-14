@@ -25,5 +25,4 @@ A game resembling Jeopardy. Users will be able to select a square with a point v
 
 ### Version 2.0 goals
 * Add two players
-* Get final jeopary working
-* Add a wager points in final jeopardy function
+* Add a countdown function to final jeopardy
