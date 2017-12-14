@@ -25,10 +25,12 @@ $(document).ready(function () {
 
     //get question span selection
     const questSpan = $('.questionChoice')
+   
+   //sets the category names
     $('#cat1').html('Band Members')
     $('#cat2').html('Concept Characters')
     $('#cat3').html('All About the Albums')
-    $('#cat4').html('Storyline')
+    $('#cat4').html('Setting')
     $('#cat5').html('Songs')
 
 
