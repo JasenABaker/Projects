@@ -208,9 +208,11 @@ $(document).ready(function () {
         gameEnd: () => {
             if ((game.count <= 0) && (game.score >= 0)) {
                 alert(`Great Job! You're score is ${game.score}! You win!`)
+                location.reload()
             } else if (game.count <= 0) {
                 alert(`Game over! Your score is ${game.score}. How pathetic. Hang your head in shame.`)
-            }
+                location.reload()
+            }  
         }
 
     }
