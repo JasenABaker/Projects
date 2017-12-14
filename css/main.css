@@ -95,10 +95,11 @@ header h1 {
     align-items: center;
 }
 #Pscore1{
-    grid-area: 19/ 5 / 21 / 8;
+    grid-area: 19/ 9 / 21 / 12;
 }
 
 #Pscore2{
+    display: none;
       grid-area: 19/ 14 / 21 / 17;
  
 }
@@ -161,7 +162,7 @@ header h1 {
 }
 
 .modal2{
-/*display: none;*/
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -191,6 +192,6 @@ header h1 {
     flex-direction: column;
     align-items: center;
 }
-#jepFinIn{
+input {
     font-size: 24px;
 }
