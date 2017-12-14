@@ -1,6 +1,6 @@
 ///get document ready!
 $(document).ready(function () {
-
+ 
 
 
     // get modal element
@@ -154,7 +154,8 @@ $(document).ready(function () {
         catHolder: 0,
         pointhHolder: 0,
         score: 0,
-        count: 25,
+        count: 5,
+        wager: 0,
         // get answer for category and point value
         answer: (category, pointValue) => {
 
@@ -211,15 +212,30 @@ $(document).ready(function () {
             }
             $('#score1span').html(game.score)
         },
+
+
+        WagerSubmit: $(':submit').on('click', function() {
+            game.wager = $(':input').val()
+                console.log(game.wager)
+        }),
+        
+
+        /// final jeopardy function
         finalJeopardy:() =>{
+            $('#inputH2').html(`Your score is ${game.score}. Wager your points!`)
+            
+               
+        },
+           
             
 
-        },
+        
         ///Ending the game and eventual final jeopardy starter
         gameEnd: () => {
             if ((game.count <= 0) && (game.score >= 0)) {
                 alert(`Great Job! You're score is ${game.score}! Time for final Jeopardy!`)
                 openFinal()
+                game.finalJeopardy()
                 
             } else if (game.count <= 0) {
                 alert(`Game over! Your score is ${game.score}. How pathetic. Hang your head in shame.`)
