@@ -213,20 +213,24 @@ $(document).ready(function () {
             $('#score1span').html(game.score)
         },
 
-
-        WagerSubmit: $(':submit').on('click', function() {
-            game.wager = $(':input').val()
+/// collect the wager and see if it is a number
+        wagerSubmit: $(':submit').on('click', function() {
+                const num = parseInt($(':input').val())
+            if (num <= game.score){
+                game.wager = num
                 console.log(game.wager)
+            } else if (num > game.score){
+                alert(`Your score is ${game.score}. Your wager must be less than or equal to that!`)
+            } 
+                
         }),
-        
-
         /// final jeopardy function
         finalJeopardy:() =>{
             $('#inputH2').html(`Your score is ${game.score}. Wager your points!`)
             
-               
+    
         },
-           
+    
             
 
         
